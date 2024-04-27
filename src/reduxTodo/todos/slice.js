@@ -35,6 +35,7 @@ const todosSlice = createSlice({
         state.error = null;
       })
       .addCase(deleteTodo.fulfilled, (state, { payload }) => {
+        console.log('payload', payload);
         state.isLoading = false;
         state.items = state.items.filter(item => item.id !== payload);
       })

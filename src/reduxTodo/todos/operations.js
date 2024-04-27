@@ -30,6 +30,7 @@ export const addTodo = createAsyncThunk(
 export const deleteTodo = createAsyncThunk(
   'todo/deleteTodo',
   async (id, thunkAPI) => {
+    console.log('sync', id);
     try {
       const { data } = await axios.delete(`/todos/${id}`);
       return data.id;
